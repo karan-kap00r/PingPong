@@ -1,0 +1,10 @@
+fastapi==0.95.2
+uvicorn==0.23.1
+redis==5.0.0
+kafka-python==2.0.2
+google-cloud-firestore==2.10.1
+twilio==8.0.0
+Jinja2==3.1.4
+bcrypt==3.2.2
+passlib==1.7.4
+PyJWT==2.10.0
