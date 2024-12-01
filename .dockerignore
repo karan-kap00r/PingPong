@@ -3,3 +3,8 @@
 env
 firebase_credentials.json
 .DS_Store
+py_pingpong.egg-info
+dist
+setup.py
+__pycache__/*
+build

@@ -6,7 +6,7 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 
 ## **Features**
 ### 🔔 **Multi-Channel Notification Delivery**
-- **Email**: Seamlessly integrates with **Mailgun**, **Omnisend**, and other email providers for reliable email delivery.
+- **Email**: Seamlessly integrates with **Mailgun** and other email providers for reliable email delivery {Future Scope}.
 - **SMS**: Supports integration with **Twilio** for fast and secure text message delivery.
 - **Push Notifications**: Will be implementing for real-time, personalized push notifications to mobile and web devices. {Future Scope}
 
