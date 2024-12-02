@@ -34,6 +34,13 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 - Supports new channel integrations with minimal effort.
 - Just import the package for publishing, consuming, and managing notifications.
 
+
+### 🛠️ **User-Friendly**
+- Easy-to-use interface with a class-based design for sending notifications.
+- Support for configurable parameters, including sender, receiver, and notification channels.
+- Integration with popular services like Mailgun (for email) and Twilio (for SMS).
+- Future-ready: Additional notification services will be supported in upcoming updates.
+- Fully customizable by passing API Keys and Auth Tokens.
 ---
 
 ## **Tech Stack**
@@ -67,7 +74,7 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 
 ---
 
-## **Setup and Usage**
+## **GitHub Setup and Usage**
 1. Clone the repository:
    ```bash
    git clone https://github.com/karan-kap00r/PingPong.git
@@ -86,6 +93,11 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
    - API keys for Mailgun, Twilio, Omnisend, and OneSignal.
 
 5. Enjoy the PingPong.
+
+---
+
+## **PyPI Setup and Usage**
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/pypi_import_code.png)
 
 ---
 
