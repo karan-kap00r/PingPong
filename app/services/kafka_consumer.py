@@ -14,7 +14,6 @@ REDIS_TIME_LIMIT = os.getenv("REDIS_TIME_LIMIT")
 
 async def process_message(user_id: str, message_data, username: str, mailgun_api_key=None, mailgun_domain=None, mailgun_email=None, twilio_account_sid=None, twilio_auth_token=None, twilio_phone_number=None):
     try:
-        print("locals: ", locals())
         channel = message_data.get('channel')
         notification_message = message_data.get('message')
         success = False
