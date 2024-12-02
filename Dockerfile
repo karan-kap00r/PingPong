@@ -15,4 +15,4 @@ COPY . .
 EXPOSE 8000
 
 # Start the application
-CMD ["uvicorn", "py_pingpong.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]
+CMD ["uvicorn", "pingpongx.main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

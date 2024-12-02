@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from py_pingpong.services.auth_service import signup, login
+from pingpongx.services.auth_service import signup, login
 
 router = APIRouter()
 

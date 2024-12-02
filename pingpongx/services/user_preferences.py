@@ -1,4 +1,4 @@
-from py_pingpong.services.firestore_service import get_user_preferences, update_user_preferences, delete_user_preferences
+from pingpongx.services.firestore_service import get_user_preferences, update_user_preferences, delete_user_preferences
 
 
 async def get_preferences(user_id: str):

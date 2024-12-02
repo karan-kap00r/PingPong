@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from py_pingpong.services.notification import notify
+from pingpongx.services.notification import notify
 
 router = APIRouter()
 

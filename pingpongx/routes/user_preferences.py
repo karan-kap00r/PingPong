@@ -1,5 +1,5 @@
 from fastapi import APIRouter
-from py_pingpong.services import user_preferences
+from pingpongx.services import user_preferences
 
 router = APIRouter()
 

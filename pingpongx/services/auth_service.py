@@ -1,10 +1,10 @@
 import os
 from passlib.context import CryptContext
-from py_pingpong.models import SignupRequest, LoginRequest
-from py_pingpong.services.firestore_service import db
+from pingpongx.models import SignupRequest, LoginRequest
+from pingpongx.services.firestore_service import db
 import datetime
 import jwt
-from py_pingpong.utils import validate_phone_number, validate_email
+from pingpongx.utils import validate_phone_number, validate_email
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 JWT_SECRET = os.getenv("JWT_SECRET")

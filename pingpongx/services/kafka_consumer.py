@@ -1,9 +1,9 @@
-from py_pingpong.services.email_service import MailgunEmailService
+from pingpongx.services.email_service import MailgunEmailService
 from kafka import KafkaConsumer
-from py_pingpong.utils import validate_email, validate_phone_number, sanitize_topic_name
-from py_pingpong.services.push_service import send_push_notification
-from py_pingpong.services.redis_service import get_from_queue, read_from_queue, delete_data_by_msg
-from py_pingpong.services.sms_service import SmsService
+from pingpongx.utils import validate_email, validate_phone_number, sanitize_topic_name
+from pingpongx.services.push_service import send_push_notification
+from pingpongx.services.redis_service import get_from_queue, read_from_queue, delete_data_by_msg
+from pingpongx.services.sms_service import SmsService
 import json
 import time
 import os

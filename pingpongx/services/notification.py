@@ -1,11 +1,11 @@
 from fastapi import Request
-from py_pingpong.services.auth_middleware import require_auth
-from py_pingpong.services.kafka_consumer import consume_notifications
-from py_pingpong.services.redis_service import add_to_queue
-from py_pingpong.services.kafka_producer import send_event
-from py_pingpong.services.firestore_service import save_notification_log, get_user_preferences, update_user_preferences
-from py_pingpong.utils import generate_notification_id
-from py_pingpong.utils import validate_phone_number, validate_email
+from pingpongx.services.auth_middleware import require_auth
+from pingpongx.services.kafka_consumer import consume_notifications
+from pingpongx.services.redis_service import add_to_queue
+from pingpongx.services.kafka_producer import send_event
+from pingpongx.services.firestore_service import save_notification_log, get_user_preferences, update_user_preferences
+from pingpongx.utils import generate_notification_id
+from pingpongx.utils import validate_phone_number, validate_email
 import time
 import os
 

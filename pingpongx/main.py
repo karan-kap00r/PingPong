@@ -2,9 +2,9 @@ from fastapi import FastAPI
 from fastapi import Request
 from fastapi.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
-from py_pingpong.routes.notification import router as notification_router
-from py_pingpong.routes.user_preferences import router as preferences_router
-from py_pingpong.routes.auth_routes import router as auth_router
+from pingpongx.routes.notification import router as notification_router
+from pingpongx.routes.user_preferences import router as preferences_router
+from pingpongx.routes.auth_routes import router as auth_router
 
 docs_config = {
     "openapi_url": None,

@@ -1,7 +1,7 @@
 import os
 from kafka import KafkaProducer
 from kafka.admin import KafkaAdminClient, NewTopic
-from py_pingpong.utils import sanitize_topic_name
+from pingpongx.utils import sanitize_topic_name
 
 TOPIC_NAME = os.getenv('TOPIC_NAME')
 BROKER = 'kafka:9092'
