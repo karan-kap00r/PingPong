@@ -4,6 +4,7 @@ from pingpongx.services.kafka_consumer import consume_notifications
 from pingpongx.services.redis_service import add_to_queue
 from pingpongx.services.kafka_producer import send_event
 from pingpongx.services.firestore_service import save_notification_log, get_user_preferences, update_user_preferences
+from pingpongx.services.user_preferences import UserPreferences
 from pingpongx.utils import generate_notification_id
 from pingpongx.utils import validate_phone_number, validate_email
 import time

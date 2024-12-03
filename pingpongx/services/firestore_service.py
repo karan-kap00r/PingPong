@@ -16,7 +16,7 @@ async def get_user_preferences(user_id: str):
         else:
             return {
                 "user_id": user_id,
-                "preferences": {"email": True, "sms": True, "push": True},
+                "preferences": {"email": True, "sms": True},
                 "last_updated": None
             }
 
