@@ -97,8 +97,25 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 ---
 
 ## **PyPI Setup and Usage**
-![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/pypi_import_code.png)
+- To import package:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/import.png)
+- To send notifications by importing python package:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/code.png)
+- To set and get user preferences:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/get_set_UP.png)
 
+---
+## **Usage Via APIs**
+- To SignUp:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/signUp.png)
+- To Login:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/login.png)
+- To Send Notifications:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/send.png)
+- To Get User Preferences:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/getUP.png)
+- To Update User Preferences:
+![Image description](https://raw.githubusercontent.com/karan-kap00r/PingPong/refs/heads/master/static/setUP.png)
 ---
 
 ## **Why PingPong?**
