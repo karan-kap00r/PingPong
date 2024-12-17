@@ -97,3 +97,55 @@ def signup(request: SignupRequest):
 def login(request: LoginRequest):
     """Login API."""
     return login_user(request.username, request.password)
+
+
+def sender_record(sender: str, channel: str = None):
+    try:
+        if channel is None or channel not in ["email", "sms"]:
+            return {"message": "Invalid channel", "success": False}
+
+        doc_key = sender + "_" + channel
+        user_ref = db.collection("sender_record").document(doc_key)
+        user_data = user_ref.get()
+        count = 1
+
+        if user_data.exists:
+            user_data = user_data.to_dict()
+            count = user_data["count"]
+            if channel == "email" and count < 3 or channel == "sms" and count < 2:
+                user_ref.set({
+                    "username": sender,
+                    "channel": channel,
+                    "count": count+1
+                })
+                return {"message": "done", "success": True}
+            else:
+                return {"message": "unauthorized", "success": False}
+        else:
+            user_ref.set({
+                "username": sender,
+                "channel": channel,
+                "count": count
+            })
+            return {"message": "done", "success": True}
+
+    except Exception as e:
+        return {"message": str(e), "success": False}
+
+
+def get_sender_record(sender: str, channel: str = None):
+    try:
+        if channel is None or channel not in ["email", "sms"]:
+            return None
+
+        doc_key = sender + "_" + channel
+        user_ref = db.collection("sender_record").document(doc_key)
+        user_data = user_ref.get()
+        if user_data.exists:
+            user_data = user_data.to_dict()
+            return user_data["count"]
+        return 1
+
+    except Exception:
+        return None
+
