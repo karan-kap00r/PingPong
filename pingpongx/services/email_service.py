@@ -26,7 +26,6 @@ class MailgunEmailService:
                 auth=("api", self.mailgun_api_key),
                 data=data
             )
-            print("RES: ", response.text)
             if response.status_code == 200:
                 print(f"Email sent successfully to {to_emails} with status code: {response.status_code}\n-----------------------------------\n")
                 return True, response.status_code

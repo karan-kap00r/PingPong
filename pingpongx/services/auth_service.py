@@ -108,15 +108,30 @@ def sender_record(sender: str, channel: str = None):
         user_ref = db.collection("sender_record").document(doc_key)
         user_data = user_ref.get()
         count = 1
+        current_time = datetime.datetime.utcnow()
 
         if user_data.exists:
             user_data = user_data.to_dict()
-            count = user_data["count"]
-            if channel == "email" and count < 3 or channel == "sms" and count < 2:
+            last_updated = user_data.get("last_updated", None)
+
+            if last_updated:
+                last_updated_time = datetime.datetime.fromisoformat(last_updated)
+                time_difference = abs(current_time - last_updated_time)
+                print("FLAG: ", time_difference.total_seconds() > 48 * 3600)
+                if time_difference.total_seconds() > 48 * 3600:  # 48 hours in seconds
+                    print("TIME TO SET 1 again")
+                    count = 1  # Reset count if more than 48 hours
+                else:
+                    count = user_data["count"] + 1
+            else:
+                count = user_data["count"] + 1
+
+            if channel == "email" and count < 5 or channel == "sms" and count < 2:
                 user_ref.set({
                     "username": sender,
                     "channel": channel,
-                    "count": count+1
+                    "count": count,
+                    "last_updated": datetime.datetime.utcnow().isoformat() if count == 1 else last_updated
                 })
                 return {"message": "done", "success": True}
             else:
@@ -125,7 +140,8 @@ def sender_record(sender: str, channel: str = None):
             user_ref.set({
                 "username": sender,
                 "channel": channel,
-                "count": count
+                "count": count,
+                "last_updated": datetime.datetime.utcnow().isoformat()
             })
             return {"message": "done", "success": True}
 
@@ -138,12 +154,24 @@ def get_sender_record(sender: str, channel: str = None):
         if channel is None or channel not in ["email", "sms"]:
             return None
 
+        current_time = datetime.datetime.utcnow()
         doc_key = sender + "_" + channel
         user_ref = db.collection("sender_record").document(doc_key)
         user_data = user_ref.get()
         if user_data.exists:
             user_data = user_data.to_dict()
-            return user_data["count"]
+            last_updated = user_data.get("last_updated", None)
+
+            if last_updated:
+                last_updated_time = datetime.datetime.fromisoformat(last_updated)
+                time_difference = abs(current_time - last_updated_time)
+                if time_difference.total_seconds() > 48 * 3600:  # 48 hours in seconds
+                    count = 1   # Reset count if more than 48 hours
+                else:
+                    count = user_data["count"]
+            else:
+                count = user_data["count"]
+            return count
         return 1
 
     except Exception:

@@ -37,7 +37,8 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 
 ### 🛠️ **User-Friendly**
 - Easy-to-use interface with a class-based design for sending notifications.
-- Support for configurable parameters, including sender, receiver, and notification channels.
+- You can opt for trail account for sending 3 emails and 1 sms/48 hours.
+- Support for configurable parameters, including sender, receiver, notification channels & API/Auth Keys.
 - Integration with popular services like Mailgun (for email) and Twilio (for SMS).
 - Future-ready: Additional notification services will be supported in upcoming updates.
 - Fully customizable by passing API Keys and Auth Tokens.
