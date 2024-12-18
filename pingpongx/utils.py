@@ -1,9 +1,13 @@
+from google.cloud import firestore, secretmanager
+import json
 import requests
 import os
 import uuid
 import re
 
 ONESIGNAL_APP_ID = os.getenv('ONESIGNAL_APP_ID', "")
+PROJECT_ID = os.getenv('PROJECT_ID')
+ENV = os.environ.get("ENV")
 
 
 def generate_device_token():
@@ -65,3 +69,21 @@ def sanitize_topic_name(topic_name):
     # Replace "@" with "-" to make the topic name valid
     sanitized_topic_name = topic_name.replace('@', '-')
     return sanitized_topic_name
+
+
+def get_db_via_firebase_credentials():
+    try:
+        print("environment: ", ENV)
+        if ENV == "dev":
+            return firestore.Client.from_service_account_json("firebase_credentials.json")
+        elif ENV == "local":
+            client = secretmanager.SecretManagerServiceClient()
+            secret_name = f"projects/424159745652/secrets/FIREBASE_CREDENTIALS/versions/2"
+            response = client.access_secret_version(name=secret_name)
+            credentials = response.payload.data.decode("UTF-8")
+            return firestore.Client.from_service_account_info(json.loads(credentials))
+        else:
+            return firestore.Client()
+    except Exception as e:
+        print(f"Error getting firebase credentials: {e}")
+        return None

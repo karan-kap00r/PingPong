@@ -21,7 +21,7 @@ class SmsService:
                     from_=self.twilio_phone_number,
                     to=phone
                 )
-                print(f"SMS sent successfully to {phone}. Message SID: {message.sid}\n-----------------------------------\n")
+                print(f"SMS sent successfully to {phone}.\n-----------------------------------\n")
             return True
 
         except Exception as e:

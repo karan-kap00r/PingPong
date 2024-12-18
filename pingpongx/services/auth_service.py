@@ -117,16 +117,14 @@ def sender_record(sender: str, channel: str = None):
             if last_updated:
                 last_updated_time = datetime.datetime.fromisoformat(last_updated)
                 time_difference = abs(current_time - last_updated_time)
-                print("FLAG: ", time_difference.total_seconds() > 48 * 3600)
                 if time_difference.total_seconds() > 48 * 3600:  # 48 hours in seconds
-                    print("TIME TO SET 1 again")
                     count = 1  # Reset count if more than 48 hours
                 else:
                     count = user_data["count"] + 1
             else:
                 count = user_data["count"] + 1
 
-            if channel == "email" and count < 5 or channel == "sms" and count < 2:
+            if channel == "email" and count < 5 or channel == "sms" and count < 3:
                 user_ref.set({
                     "username": sender,
                     "channel": channel,

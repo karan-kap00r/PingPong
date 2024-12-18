@@ -1,8 +1,12 @@
 from google.cloud import firestore
+from pingpongx.utils import get_db_via_firebase_credentials
 import datetime
 import os
 
-db = firestore.Client.from_service_account_json("firebase_credentials.json")
+db = get_db_via_firebase_credentials()
+if db is None:
+    print("No firebase credentials found.")
+
 USER_PREFERENCE = os.environ.get("FIRESTORE_USER_PREFERENCE", "user_preferences")
 NOTIFICATION = os.getenv("FIRESTORE_NOTIFICATION", "notifications")
 
