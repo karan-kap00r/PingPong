@@ -79,7 +79,7 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
 1. Clone the repository:
    ```bash
    git clone https://github.com/karan-kap00r/PingPong.git
-   cd pingpong
+   cd pingpongx
    ```
 
 2. Build and run the Docker containers:
@@ -87,7 +87,7 @@ PingPong is a robust, scalable, and highly customizable **Dynamic Notification D
    docker-compose up --build
    ```
 
-3. Access the API on `http://localhost:8000` and explore the interactive Swagger documentation at `http://localhost:8000/docs`.
+3. Access the API on `http://localhost:8080` and explore the interactive Swagger documentation at `http://localhost:8000/docs`.
 
 4. Configure your environment variables:
    - Redis and Kafka configurations.

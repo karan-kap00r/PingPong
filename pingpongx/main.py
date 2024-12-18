@@ -1,6 +1,4 @@
 from fastapi import FastAPI
-from fastapi import Request
-from fastapi.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
 from pingpongx.routes.notification import router as notification_router
 from pingpongx.routes.user_preferences import router as preferences_router
@@ -23,10 +21,6 @@ app = FastAPI(
 
 templates = Jinja2Templates(directory="py_pingpong/templates")
 
-
-@app.get("/", response_class=HTMLResponse)
-async def home(request: Request):
-    return templates.TemplateResponse("index.html", {"request": request})
 
 app.include_router(notification_router, prefix="/notifications")
 app.include_router(preferences_router, prefix="/preferences")
